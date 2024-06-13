@@ -10,13 +10,14 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: zodResolver(signinSchema),
+    resolver: zodResolver(signinSchema), // Usando o resolvedor Zod para validar o formulário
   });
 
   const onLogin = async (data) => {
     try {
+      // Lógica de login
     } catch (error) {
-      console.log(error);
+      console.log(error); // Tratamento de erros
     }
   };
 
@@ -26,21 +27,23 @@ const Login = () => {
       <form onSubmit={handleSubmit(onLogin)}>
         <h3>EMAIL</h3>
         <input
-          {...register("email")}
+          {...register("email")} // Registrando o campo de e-mail com o React Hook Form
           type="email"
           placeholder="E-mail"
           name="email"
         />
         <h3>SENHA</h3>
         <input
-          {...register("password")}
+          {...register("password")} // Registrando o campo de senha com o React Hook Form
           type="password"
           placeholder="Senha"
           name="password"
         />
-        {errors.email && <span>{errors.email.message}</span>}
-        {errors.password && <span>{errors.password.message}</span>}
-        <Button type="submit">Entrar</Button>
+        {errors.email && <span>{errors.email.message}</span>}{" "}
+        {/* Exibindo mensagem de erro para o campo de e-mail */}
+        {errors.password && <span>{errors.password.message}</span>}{" "}
+        {/* Exibindo mensagem de erro para o campo de senha */}
+        <Button type="submit">Entrar</Button> {/* Botão de login */}
       </form>
     </LoginArea>
   );

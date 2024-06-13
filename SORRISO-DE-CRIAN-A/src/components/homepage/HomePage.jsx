@@ -1,3 +1,4 @@
+// Importações
 import thumbnail from "../../assets/thumbnailhome.jpg";
 import { Button } from "../navbar/NavBarStyle";
 import {
@@ -14,7 +15,7 @@ import img2 from "../../assets/img2.jpg";
 import img3 from "../../assets/img3.jpg";
 import img4 from "../../assets/img4.jpg";
 import { Link } from "react-router-dom";
-
+// Array de informações para serem renderizadas na seção de cultura organizacional
 const renderInformations = [
   {
     id: 1,
